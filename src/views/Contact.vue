@@ -22,17 +22,23 @@
                         @input="$v.email.$touch()"
                         @blur="$v.email.$touch()"
                     ></v-text-field>
-                    <v-text-field
+                    <!-- <v-text-field
                         v-model="container"
                         :error-messages="containerErrors"
                         label="Container"
                         required
                         @input="$v.container.$touch()"
                         @blur="$v.container.$touch()"
-                    ></v-text-field>
-                    <div class="mt-12 text-center">
-                        Container: {{ container }}
-                    </div>
+                    ></v-text-field> -->
+                    <v-textarea
+                    v-model="container"
+                    :error-messages="containerErrors"
+                    name="input-7-1"
+                    label="Content"
+                    required
+                    @input="$v.container.$touch()"
+                    @blur="$v.container.$touch()"
+                    ></v-textarea>
                     <v-btn color="success" class="mr-4" @click="submit">submit</v-btn>
                 </form>
             </v-flex>
@@ -93,7 +99,7 @@
       containerErrors () {
         const errors = []
         if (!this.$v.container.$dirty) return errors
-        !this.$v.container.required && errors.push('Container is required')
+        !this.$v.container.required && errors.push('Content is required')
         return errors
       },
     },

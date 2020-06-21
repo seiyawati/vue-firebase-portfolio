@@ -2,7 +2,7 @@
         <div class="top">
             <div class="main">
                 <h1>Welcome To My Portfolio</h1>
-                <vue-typer :text="['Now loading....\nHello World!!\nMy name is Seiya Kawamoto.\nThank you for visiting this site. \nTake it easy!\n']" 
+                <vue-typer :text="[`Now loading....\nHello World!!\nMy name is Seiya Kawamoto.\nThank you for visiting this site. \nTake it easy!\n`]" 
                 :repeat='false' :preTypeDelay="70" :typeDelay="70" :preEraseDelay="2000" :eraseDelay="250"></vue-typer>
             </div>
             <vue-particles 
@@ -18,14 +18,17 @@
 <style scoped>
 .top {
     font-family: Impact;
-    font-size: 30px;
+    font-size: 15px;
 }
+
 h1 {
-    font-size: 60px;
+    font-size: 24px;
 }
+
 vue-particles {
     position: relative;
 }
+
 .main {
     position: fixed;
     top: 50%;
@@ -33,6 +36,28 @@ vue-particles {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+}
+
+/*幅768px以上に適用されるCSS（タブレットサイズ以上）*/
+@media screen and (min-width:768px){
+    .top{
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+}
+
+/*幅990px以上に適用されるCSS（PCサイズ以上）*/
+@media screen and (min-width:990px){
+    .top{
+        font-size: 30px;
+    }
+
+    h1{
+        font-size: 60px;
+    }
 }
 </style>
 

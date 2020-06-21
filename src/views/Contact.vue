@@ -1,7 +1,10 @@
 <template>
     <v-container>
         <h1 class="contact">Contact</h1>
-        <p  class="explain">お問い合わせはこちらからお願いします！</p>
+        <p  class="explain">
+            お仕事の依頼などはこちらからよろしくお願い致します！<br>
+            プロフィール欄にあるtwitterにDMを送ってもらっても構いません。
+        </p>
         <v-layout wrap>
             <v-flex>
                 <form class="form">
@@ -9,7 +12,7 @@
                         v-model="name"
                         :error-messages="nameErrors"
                         :counter="10"
-                        label="Name"
+                        label="お名前*"
                         required
                         @input="$v.name.$touch()"
                         @blur="$v.name.$touch()"
@@ -17,29 +20,21 @@
                     <v-text-field
                         v-model="email"
                         :error-messages="emailErrors"
-                        label="E-mail"
+                        label="メールアドレス*"
                         required
                         @input="$v.email.$touch()"
                         @blur="$v.email.$touch()"
                     ></v-text-field>
-                    <!-- <v-text-field
-                        v-model="container"
-                        :error-messages="containerErrors"
-                        label="Container"
-                        required
-                        @input="$v.container.$touch()"
-                        @blur="$v.container.$touch()"
-                    ></v-text-field> -->
                     <v-textarea
                     v-model="container"
                     :error-messages="containerErrors"
                     name="input-7-1"
-                    label="Content"
+                    label="お問い合わせ内容*"
                     required
                     @input="$v.container.$touch()"
                     @blur="$v.container.$touch()"
                     ></v-textarea>
-                    <v-btn color="success" class="mr-4" @click="submit">submit</v-btn>
+                    <v-btn color="primary" class="mr-4" @click="submit">送信</v-btn>
                 </form>
             </v-flex>
         </v-layout>
@@ -57,7 +52,7 @@
 }
 
 .form {
-    width: 500px;
+    width: 300px;
     margin: 0 auto;
 }
 </style>
@@ -85,21 +80,21 @@
       nameErrors () {
         const errors = []
         if (!this.$v.name.$dirty) return errors
-        !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
-        !this.$v.name.required && errors.push('Name is required.')
+        !this.$v.name.maxLength && errors.push('お名前は10字以内で入力してください。')
+        !this.$v.name.required && errors.push('入力必須です。')
         return errors
       },
       emailErrors () {
         const errors = []
         if (!this.$v.email.$dirty) return errors
-        !this.$v.email.email && errors.push('Must be valid e-mail')
-        !this.$v.email.required && errors.push('E-mail is required')
+        !this.$v.email.email && errors.push('正しい形式で入力してください。')
+        !this.$v.email.required && errors.push('入力必須です。')
         return errors
       },
       containerErrors () {
         const errors = []
         if (!this.$v.container.$dirty) return errors
-        !this.$v.container.required && errors.push('Content is required')
+        !this.$v.container.required && errors.push('入力必須です。')
         return errors
       },
     },

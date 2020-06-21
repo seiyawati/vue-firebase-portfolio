@@ -1,12 +1,12 @@
 <template>
   <v-container>
-    <h1 style="text-align: center; font-size: 40px;">My Works</h1>
+    <h1>My Works</h1>
     <hr />
     <div v-for="(work, index) in works" :key="index">
       <v-layout wrap>
         <v-flex>
-          <img :src="work.file" alt="file" style="width:100%;" />
-          <a :href="work.link">
+          <img :src="work.file" alt="file"/>
+          <a :href="work.url">
             <h2>{{ work.title }}</h2>
           </a>
           <p></p>
@@ -19,9 +19,9 @@
           </a>
         </v-flex>
       </v-layout>
-      <p style="height:25px;"></p>
+      <p class="space"></p>
       <hr />
-      <p style="height:25px;"></p>
+      <p class="space"></p>
     </div>
   </v-container>
 </template>
@@ -53,6 +53,11 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
 h2 {
   color: black;
 }
@@ -60,5 +65,13 @@ h2 {
 a {
   text-decoration: underline;
   text-decoration-color: black;
+}
+
+img {
+    width:100%;
+}
+
+.space {
+    height: 25px;
 }
 </style>

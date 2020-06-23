@@ -1,32 +1,46 @@
 <template>
     <v-container>
-        <section class="profile">
-            <div class="title" style="text-align: center;">
-                <h1 style="font-size: 40px;">About Me</h1>
-            </div>
-            <div class="two-wrapper">
-                <div class="image" style="margin-right: 50px;">
+        <h1 style="font-size: 40px; text-align: center;">About Me</h1>
+        <v-row>
+            <v-col  cols="12" xs="12" sm="12" md="12" lg="12"> 
+                <div class="image">
                     <v-avatar color="" size="200">
                         <v-img src="../assets/about2.jpg"></v-img>
                     </v-avatar>
                 </div>
-                <div class="content">
-                    <table>
+            </v-col>
+            <v-col cols="12" xs="12" sm="12" md="12" lg="12">
+                <div class="message">
+                    <h3>ご訪問ありがとうございます。川本聖也と申します。<br>
+                        東京海洋大学環境学科の3年生です。<br>
+                        プログラミング歴は半年です。<br>
+                        codeshipに通っています。<br>
+                        アマチュアキックボクサーです。
+                    </h3>
+                </div>
+            </v-col>
+            <v-col cols="12" xs="12" sm="12" md="12" lg="12">
+                <div class="table">
+                    <table> 
                         <tr>
                             <td><h3>Name:</h3></td>
-                            <td><h3>川本聖也(Seiya Kawamoto)</h3></td>
+                            <td><h3>Seiya Kawamoto</h3></td>
                         </tr>
                         <tr>
                             <td><h3>University:</h3></td>
-                            <td><h3>東京海洋大学</h3></td>
+                            <td><h3>TUMSAT</h3></td>
                         </tr>
                         <tr>
                             <td><h3>From:</h3></td>
-                            <td><h3>岡山県</h3></td>
+                            <td><h3>Okayama</h3></td>
                         </tr>
                         <tr>
                             <td><h3>Hobby:</h3></td>
-                            <td><h3>キックボクシング、HIPHOP、釣り</h3></td>
+                            <td><h3>Kick Boxing, HIPHOP, Fishing</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h3>Skills:</h3></td>
+                            <td><h3>PHP/Laravel/Javascript/Vue.js</h3></td>
                         </tr>
                         <tr>
                             <td><h3>Twitter:</h3></td>
@@ -38,80 +52,50 @@
                         </tr>
                     </table>
                 </div>
-            </div>
-            <div class="skill" style="text-align: center; margin-top: 30px;">
-                <h2 style="font-size: 30px;">Skills</h2>
-            </div>
-            <div class="chart">
-                <Doughnut></Doughnut>
-            </div>
-        </section>
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
 <style scoped>
-.two-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-}
-
 .image {
-    margin-top: 30px;
+   text-align: center;
 }
-
-.content {
-    margin-top: 30px;
-}
-
-table {
-    border-spacing:0;
-}
-
-.chart {
-    width: 400px;
-    height: 400px;
+.message {
+    width: 300px;
     margin: 0 auto;
 }
+.table {
+    width: 300px;
+    margin: 0 auto;
+}
+h3 {
+    font-size: 12px;
+}
 
+/**PC対応のサイズ */
 @media screen and (min-width : 990px) {
-    .two-wrapper {
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 50px;
+    h3 {
+    font-size: 12px;
     }
+
+
 }
 </style>
 
 <script>
-import { mdiLanguagePhp } from '@mdi/js';
-import { mdiLaravel } from '@mdi/js';
-import { mdiLanguageJavascript } from '@mdi/js';
-import { mdiVuejs } from '@mdi/js';
-import { mdiBootstrap } from '@mdi/js';
-import { mdiLanguageHtml5 } from '@mdi/js';
-import { mdiLanguageCss3 } from '@mdi/js';
 import { mdiTwitter } from '@mdi/js';
 import { mdiGithub } from "@mdi/js";
 import { db } from "../firebase/index";
-import Doughnut from "../components/Piechart.vue";
 
 export default {
     data: () => ({
-        mdiLanguagePhp,
-        mdiLaravel,
-        mdiLanguageJavascript,
-        mdiVuejs ,
-        mdiBootstrap,
-        mdiLanguageHtml5,
-        mdiLanguageCss3,
         mdiTwitter,
         mdiGithub,
         about: []
     }),
     components: {
-        Doughnut
+
     },
     created() {
        db.collection("about")

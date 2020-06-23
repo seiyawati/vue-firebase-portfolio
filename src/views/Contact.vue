@@ -9,7 +9,7 @@
             <v-flex>
                 <form class="form">
                     <v-text-field
-                        v-model="name"
+                        v-model="contactForm.name"
                         :error-messages="nameErrors"
                         :counter="10"
                         label="お名前*"
@@ -18,7 +18,7 @@
                         @blur="$v.name.$touch()"
                     ></v-text-field>
                     <v-text-field
-                        v-model="email"
+                        v-model="contactForm.email"
                         :error-messages="emailErrors"
                         label="メールアドレス*"
                         required
@@ -26,16 +26,26 @@
                         @blur="$v.email.$touch()"
                     ></v-text-field>
                     <v-textarea
-                    v-model="container"
-                    :error-messages="containerErrors"
-                    name="input-7-1"
-                    label="お問い合わせ内容*"
-                    required
-                    @input="$v.container.$touch()"
-                    @blur="$v.container.$touch()"
+                        v-model="contactForm.container"
+                        :error-messages="containerErrors"
+                        name="input-7-1"
+                        label="お問い合わせ内容*"
+                        required
+                        @input="$v.container.$touch()"
+                        @blur="$v.container.$touch()"
                     ></v-textarea>
                     <v-btn color="primary" class="mr-4" @click="sendMail">送信</v-btn>
                 </form>
+                <v-snackbar
+                v-model="snackBar.show"
+                :color="snackBar.color"
+                bottom
+                right
+                :timeout="6000"
+                class="font-weight-bold"
+                >
+                    {{snackBar.message}}
+                </v-snackbar>
             </v-flex>
         </v-layout>
     </v-container>
@@ -72,9 +82,16 @@
     },
 
     data: () => ({
-      name: '',
-      email: '',
-      container: ''
+        contactForm: {
+            name: '',
+            email: '',
+            container: ''
+        },
+        snackBar: {
+            show: false,
+            color: '',
+            message: ''
+        }
     }),
 
     computed: {
@@ -99,15 +116,13 @@
         return errors
       },
     },
+
     methods: {
       sendMail: function () {
-        if (this.$refs.form.validate()) {
-          this.contactForm.loading = true
-          const mailer = functions.httpsCallable('sendMail')
-
-          mailer(this.contactForm)
+        const mailer = functions.httpsCallable('sendMail')
+        mailer(this.contactForm)
             .then(() => {
-              this.formReset()
+              this.clear()
               this.showSnackBar(
                 'success',
                 'お問い合わせありがとうございます。送信完了しました'
@@ -120,17 +135,18 @@
               )
               console.log(err)
             })
-            .finally(() => {
-              this.contactForm.loading = false
-            })
-        }
-      },
-      clear () {
-        this.$v.$reset()
-        this.name = ''
-        this.email = ''
-        this.container = ''
-      },
+        },
+        showSnackBar: function (color, message) {
+            this.snackBar.message = message
+            this.snackBar.color = color
+            this.snackBar.show = true
+        },
+        clear () {
+            this.$v.$reset()
+            this.contactForm.name = ''
+            this.contactForm.email = ''
+            this.contactForm.container = ''
+        },
     },
   }
 </script>

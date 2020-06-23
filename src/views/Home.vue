@@ -5,26 +5,16 @@
                 <vue-typer :text="[`Now loading....\nHello World!!\nMy name is Seiya Kawamoto.\nThank you for visiting !!\nTake it easy!\n`]" 
                 :repeat='false' :preTypeDelay="70" :typeDelay="70" :preEraseDelay="2000" :eraseDelay="250"></vue-typer>
             </div>
-            <vue-particles 
-                color="#34495F" 
-                class="particles"
-                shapeType="circle"
-                :particleSize="8"
-            >
-            </vue-particles>
         </div>
 </template>
 
 <style scoped>
 .top {
-    font-family: Impact;
-    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11px;
 }
 h1 {
-    font-size: 24px;
-}
-vue-particles {
-    position: relative;
+    font-size: 13px;
 }
 .main {
     position: fixed;
@@ -38,6 +28,7 @@ vue-particles {
 @media screen and (min-width:768px){
     .top{
         font-size: 20px;
+        font-family: Impact;
     }
     h1{
         font-size: 40px;
@@ -47,6 +38,7 @@ vue-particles {
 @media screen and (min-width:990px){
     .top{
         font-size: 30px;
+        font-family: Impact;
     }
     h1{
         font-size: 60px;
@@ -55,10 +47,7 @@ vue-particles {
 </style>
 
 <script>
-import Vue from 'vue';
-import VueParticles from 'vue-particles';
 import { VueTyper } from 'vue-typer';
-Vue.use(VueParticles);
 export default {
     components: {
         VueTyper

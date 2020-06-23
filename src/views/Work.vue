@@ -3,8 +3,8 @@
     <h1>My Works</h1>
     <hr />
     <div v-for="(work, index) in works" :key="index">
-      <v-layout wrap>
-        <v-flex>
+      <v-row>
+        <v-col cols="12">
           <img :src="work.file" alt="file"/>
           <a :href="work.url">
             <h2>{{ work.title }}</h2>
@@ -17,8 +17,8 @@
           <a href="https://github.com/seiyawati/vue-laravel-app">
             <v-icon large color="black">{{ mdiGithub }}</v-icon>
           </a>
-        </v-flex>
-      </v-layout>
+        </v-col>
+      </v-row>
       <p class="space"></p>
       <hr />
       <p class="space"></p>
@@ -45,7 +45,6 @@ export default {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.works.push(doc.data());
-          console.log(doc.data());
         });
       });
   }

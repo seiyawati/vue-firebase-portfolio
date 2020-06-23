@@ -3,7 +3,7 @@
         <h1 class="contact">Contact</h1>
         <p  class="explain">
             お仕事の依頼などはこちらからよろしくお願い致します！<br>
-            プロフィール欄にあるtwitterにDMを送ってもらっても構いません。
+            プロフィール欄にあるtwitterにDMを送って頂いても構いません。
         </p>
         <v-layout wrap>
             <v-flex>
@@ -34,7 +34,7 @@
                     @input="$v.container.$touch()"
                     @blur="$v.container.$touch()"
                     ></v-textarea>
-                    <v-btn color="primary" class="mr-4" @click="submit">送信</v-btn>
+                    <v-btn color="primary" class="mr-4" @click="sendMail">送信</v-btn>
                 </form>
             </v-flex>
         </v-layout>
@@ -60,6 +60,7 @@
 <script>
   import { validationMixin } from 'vuelidate'
   import { required, maxLength, email } from 'vuelidate/lib/validators'
+  import { functions } from '../firebase/index'
 
   export default {
     mixins: [validationMixin],
@@ -98,10 +99,31 @@
         return errors
       },
     },
-
     methods: {
-      submit () {
-        this.$v.$touch()
+      sendMail: function () {
+        if (this.$refs.form.validate()) {
+          this.contactForm.loading = true
+          const mailer = functions.httpsCallable('sendMail')
+
+          mailer(this.contactForm)
+            .then(() => {
+              this.formReset()
+              this.showSnackBar(
+                'success',
+                'お問い合わせありがとうございます。送信完了しました'
+              )
+            })
+            .catch(err => {
+              this.showSnackBar(
+                'error',
+                '送信に失敗しました。時間をおいて再度お試しください'
+              )
+              console.log(err)
+            })
+            .finally(() => {
+              this.contactForm.loading = false
+            })
+        }
       },
       clear () {
         this.$v.$reset()

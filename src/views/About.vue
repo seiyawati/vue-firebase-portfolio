@@ -6,7 +6,7 @@
             </div>
             <div class="two-wrapper">
                 <div class="image" style="margin-right: 50px;">
-                    <v-avatar color="indigo" size="200">
+                    <v-avatar color="" size="200">
                         <v-img src="../assets/about2.jpg"></v-img>
                     </v-avatar>
                 </div>
@@ -39,7 +39,7 @@
                     </table>
                 </div>
             </div>
-            <div class="skill" style="text-align: center; margin-top: 50px;">
+            <div class="skill" style="text-align: center; margin-top: 30px;">
                 <h2 style="font-size: 30px;">Skills</h2>
             </div>
             <div class="chart">
@@ -66,7 +66,7 @@
 }
 
 table {
-    border-spacing: 10px 0;
+    border-spacing:0;
 }
 
 .chart {

@@ -16,6 +16,13 @@
     font-family: sans-serif;
     color:azure;
     font-weight: 600;
+    font-size: 10px;
+}
+
+@media screen and (min-width:990px) {
+    .text {
+        font-size: 15px;
+    }
 }
 </style>
 

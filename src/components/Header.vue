@@ -1,11 +1,11 @@
 <template>
     <v-container>
       <v-app-bar color="#34495e" app dark>
-      <v-toolbar-title>
-        <router-link to="/" class="link">HOME</router-link>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn text>
+            <router-link to="/" class="link">HOME</router-link>
+        </v-btn>
         <v-btn text>
             <router-link to="/about" class="link">About</router-link>
         </v-btn>
@@ -29,3 +29,5 @@
     color: azure;
 }
 </style>
+
+

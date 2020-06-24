@@ -5,7 +5,7 @@
             <v-col  cols="12" xs="12" sm="12" md="12" lg="12"> 
                 <div class="image">
                     <v-avatar color="" size="200">
-                        <v-img src="../assets/about2.jpg"></v-img>
+                        <v-img src="../assets/about1.jpg"></v-img>
                     </v-avatar>
                 </div>
             </v-col>
@@ -78,8 +78,6 @@ h3 {
     h3 {
     font-size: 12px;
     }
-
-
 }
 </style>
 

@@ -28,7 +28,6 @@
                     <v-textarea
                         v-model="contactForm.container"
                         :error-messages="containerErrors"
-                        name="input-7-1"
                         label="お問い合わせ内容*"
                         required
                         @input="$v.container.$touch()"

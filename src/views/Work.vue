@@ -6,7 +6,7 @@
       <v-row>
         <v-col cols="12">
           <img :src="work.file" alt="file"/>
-          <a :href="work.url">
+          <a :href="work.url" target="blank">
             <h2>{{ work.title }}</h2>
           </a>
           <p></p>
@@ -14,7 +14,7 @@
           <p></p>
           <h4>{{ work.text }}</h4>
           <p></p>
-          <a href="https://github.com/seiyawati/vue-laravel-app">
+          <a href="https://github.com/seiyawati/vue-laravel-app" target="blank">
             <v-icon large color="black">{{ mdiGithub }}</v-icon>
           </a>
         </v-col>

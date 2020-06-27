@@ -44,11 +44,11 @@
                         </tr>
                         <tr>
                             <td><h3>Twitter:</h3></td>
-                            <td><a href="https://twitter.com/gibachannel"><v-icon color="#00acee">{{ mdiTwitter }}</v-icon></a></td>
+                            <td><a href="https://twitter.com/gibachannel" target="blank"><v-icon color="#00acee">{{ mdiTwitter }}</v-icon></a></td>
                         </tr>
                         <tr>
                             <td><h3>GitHub:</h3></td>
-                            <td><a href="https://github.com/seiyawati"><v-icon color="black">{{ mdiGithub }}</v-icon></a></td>
+                            <td><a href="https://github.com/seiyawati" target="blank"><v-icon color="black">{{ mdiGithub }}</v-icon></a></td>
                         </tr>
                     </table>
                 </div>

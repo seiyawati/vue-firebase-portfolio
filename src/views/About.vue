@@ -1,82 +1,64 @@
 <template>
     <v-container>
         <h1 style="font-size: 40px; text-align: center;">About Me</h1>
-        <v-row>
-            <v-col  cols="12" xs="12" sm="12" md="12" lg="12"> 
-                <div class="image">
-                    <v-avatar color="" size="200">
-                        <v-img src="../assets/about1.jpg"></v-img>
-                    </v-avatar>
-                </div>
-            </v-col>
-            <v-col cols="12" xs="12" sm="12" md="12" lg="12">
+        <h3 style="text-align: center;">私について</h3>
+        <section class="profile">
+            <div class="image">
+                <v-avatar color="" size="300">
+                    <v-img src="../assets/about1.jpg"></v-img>
+                </v-avatar>
+            </div>
+            <dir>
                 <div class="message">
-                    <h3>ご訪問ありがとうございます。川本聖也と申します。<br>
-                        東京海洋大学環境学科の3年生です。<br>
-                        プログラミング歴は半年です。<br>
-                        codeshipに通っています。<br>
-                        アマチュアキックボクサーです。
+                    <h2 style="border-bottom: solid 1px ">Profile</h2>
+                    <p></p>
+                    <h3>川本聖也（Seiya Kawamoto)<br>
+                        <p></p>
+                        ・東京海洋大学 環境学科<br>
+                        <p></p>
+                        ・プログラミング歴は約半年で、CodeShipというプログラミング スクールに通っています。<br>
+                        <p></p>
+                        ・PHPとJavaScriptを書いていて、フレームワークはLaravelとVue.jsです。<br>
+                        <p></p>
+                        ・英検2級とTOEICIPでスコア600を持っています。<br>
+                        <p></p>
+                        ・アマチュアキックボクサーとしても活動しています。<br>
+                        <p></p>
+                        ・GitHubはこちらです→<a href="https://github.com/seiyawati" target="blank"><v-icon color="black" large>{{ mdiGithub }}</v-icon></a>
+                        <p></p>
+                        ・Twitterはこちらです→<a href="https://twitter.com/gibachannel" target="blank"><v-icon color="#00acee" large>{{ mdiTwitter }}</v-icon></a>
                     </h3>
                 </div>
-            </v-col>
-            <v-col cols="12" xs="12" sm="12" md="12" lg="12">
-                <div class="table">
-                    <table> 
-                        <tr>
-                            <td><h3>Name:</h3></td>
-                            <td><h3>Seiya Kawamoto</h3></td>
-                        </tr>
-                        <tr>
-                            <td><h3>University:</h3></td>
-                            <td><h3>TUMSAT</h3></td>
-                        </tr>
-                        <tr>
-                            <td><h3>From:</h3></td>
-                            <td><h3>Okayama</h3></td>
-                        </tr>
-                        <tr>
-                            <td><h3>Hobby:</h3></td>
-                            <td><h3>Kick Boxing, HIPHOP, Fishing</h3></td>
-                        </tr>
-                        <tr>
-                            <td><h3>Skills:</h3></td>
-                            <td><h3>PHP/Laravel/Javascript/Vue.js</h3></td>
-                        </tr>
-                        <tr>
-                            <td><h3>Twitter:</h3></td>
-                            <td><a href="https://twitter.com/gibachannel" target="blank"><v-icon color="#00acee">{{ mdiTwitter }}</v-icon></a></td>
-                        </tr>
-                        <tr>
-                            <td><h3>GitHub:</h3></td>
-                            <td><a href="https://github.com/seiyawati" target="blank"><v-icon color="black">{{ mdiGithub }}</v-icon></a></td>
-                        </tr>
-                    </table>
-                </div>
-            </v-col>
-        </v-row>
+            </dir>
+        </section>
     </v-container>
 </template>
 
 <style scoped>
 .image {
-   text-align: center;
+    text-align: center;
+    margin-right: 25px;
 }
+
 .message {
-    width: 300px;
-    margin: 0 auto;
+    margin-left: 25px;
 }
-.table {
-    width: 300px;
-    margin: 0 auto;
-}
+
 h3 {
     font-size: 12px;
 }
 
 /**PC対応のサイズ */
 @media screen and (min-width : 990px) {
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+    }
+
     h3 {
-    font-size: 12px;
+    font-size: 15px;
     }
 }
 </style>

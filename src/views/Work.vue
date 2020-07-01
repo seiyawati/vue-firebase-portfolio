@@ -1,6 +1,7 @@
 <template>
   <v-container>
     <h1>My Works</h1>
+    <h3 style="text-align: center;">私が作った制作物一覧がこちらになります。ぜひご覧ください。</h3>
     <hr />
     <div v-for="(work, index) in works" :key="index">
       <v-row>
@@ -53,8 +54,8 @@ export default {
 
 <style scoped>
 h1 {
-    text-align: center;
-    font-size: 40px;
+  text-align: center;
+  font-size: 40px;
 }
 
 h2 {
@@ -67,10 +68,14 @@ a {
 }
 
 img {
-    width:100%;
+  width:100%;
+}
+
+img:hover {
+  opacity: 0.8;
 }
 
 .space {
-    height: 25px;
+  height: 25px;
 }
 </style>

@@ -24,6 +24,17 @@ h1 {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+
+@media screen and (min-width: 400px) {
+    .top {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
 /*幅768px以上に適用されるCSS（タブレットサイズ以上）*/
 @media screen and (min-width:768px){
     .top{

@@ -72,7 +72,7 @@ img {
 }
 
 img:hover {
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
 .space {

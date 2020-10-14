@@ -71,10 +71,6 @@ img {
   width:100%;
 }
 
-img:hover {
-  /* opacity: 0.8; */
-}
-
 .space {
   height: 25px;
 }

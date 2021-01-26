@@ -18,7 +18,9 @@
                         <p></p>
                         ・不動産系のITベンチャーでエンジニアインターンをしています。<br>
                         <p></p>
-                        ・PHPとJavaScriptを書いていて、FWはLaravelとVue.jsです。たまにpython。<br>
+                        ・RubyとPythonとJS、FWはRailsとScrapyとVue.jsです。趣味でPHP, Laravel。<br>
+                        <p></p>
+                        ・研究室ではFortran90を使っています。<br>
                         <p></p>
                         ・趣味はキックボクシング、銭湯巡り、あと最近競AtCoder始めました。<br>
                         <p></p>

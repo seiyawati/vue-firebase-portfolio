@@ -11,6 +11,7 @@
     "chart.js": "^2.9.3",
     "core-js": "^3.6.5",
     "firebase": "^7.15.3",
+    "firebase-functions": "^3.13.1",
     "granim": "^2.0.0",
     "vue": "^2.6.11",
     "vue-chart.js": "^0.2.0",
